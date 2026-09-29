@@ -16,7 +16,7 @@ export default function HomeLink({ "aria-label": ariaLabel, children, className 
   }
 
   return (
-    <Link href="/" aria-label={ariaLabel} className={className} onClick={handleClick}>
+    <Link href="/" aria-label={ariaLabel} className={`home-link ${className ?? ""}`} onClick={handleClick}>
       {children}
     </Link>
   );

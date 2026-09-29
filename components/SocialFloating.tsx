@@ -1,8 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { site } from "@/data/site";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { scrollHomeWithoutHash } from "@/components/useActiveSection";
+
+const zaloContacts = [
+  {
+    displayPhone: "037 905 2767",
+    href: "https://zalo.me/0379052767",
+  },
+  {
+    displayPhone: "096 579 164",
+    href: "https://zalo.me/096579164",
+  },
+] as const;
 
 function SocialIcon({ type }: { type: "zalo" | "instagram" | "youtube" }) {
   if (type === "zalo") {
@@ -28,6 +38,9 @@ function SocialIcon({ type }: { type: "zalo" | "instagram" | "youtube" }) {
 
 export default function SocialFloating() {
   const [isBackToTopVisible, setIsBackToTopVisible] = useState(false);
+  const [isZaloOpen, setIsZaloOpen] = useState(false);
+  const zaloMenuRef = useRef<HTMLDivElement>(null);
+  const zaloButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const updateVisibility = () => {
@@ -42,30 +55,88 @@ export default function SocialFloating() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isZaloOpen) {
+      return;
+    }
+
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (!zaloMenuRef.current?.contains(event.target as Node)) {
+        setIsZaloOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsZaloOpen(false);
+        zaloButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsidePointer);
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsidePointer);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isZaloOpen]);
+
   function handleBackToTop() {
     scrollHomeWithoutHash();
   }
 
-  const hasSocialLinks = Boolean(site.zaloUrl);
+  const hasSocialLinks = zaloContacts.length > 0;
 
   if (!hasSocialLinks && !isBackToTopVisible) {
     return null;
   }
 
   return (
-    <aside className="floating-controls motion-enter fixed right-4 z-30 flex flex-col gap-2.5 md:right-5 md:gap-3 xl:right-7 xl:gap-3.5" aria-label="Liên kết nhanh">
-      {site.zaloUrl ? (
-        <a
-          href={site.zaloUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Liên hệ Flash Honner qua Zalo"
-          title="Zalo: 037 905 2767"
-          className="flex size-14 items-center justify-center rounded-full border border-white/70 bg-[#0068FF] text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_14px_30px_rgba(15,23,42,0.2)] md:size-16 xl:size-[72px]"
+    <aside className="floating-controls motion-enter fixed right-4 z-50 flex flex-col gap-2.5 md:right-5 md:gap-3 xl:right-7 xl:gap-3.5" aria-label="Liên kết nhanh">
+      <div ref={zaloMenuRef} className="relative">
+        <button
+          ref={zaloButtonRef}
+          type="button"
+          aria-label={isZaloOpen ? "Đóng lựa chọn liên hệ Zalo" : "Mở lựa chọn liên hệ Zalo"}
+          aria-expanded={isZaloOpen}
+          aria-haspopup="menu"
+          aria-controls="zalo-contact-menu"
+          title="Liên hệ qua Zalo"
+          onClick={() => setIsZaloOpen((open) => !open)}
+          className={`flex size-14 items-center justify-center rounded-full border border-white/70 bg-[#0068FF] text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_14px_30px_rgba(15,23,42,0.2)] active:scale-[0.96] md:size-16 xl:size-[72px] ${isZaloOpen ? "ring-2 ring-[#93C5FD] ring-offset-2" : ""}`}
         >
           <SocialIcon type="zalo" />
-        </a>
-      ) : null}
+        </button>
+
+        <div
+          id="zalo-contact-menu"
+          hidden={!isZaloOpen}
+          role="group"
+          aria-label="Chọn số liên hệ Zalo"
+          className="zalo-popover absolute bottom-[calc(100%+12px)] right-0 z-[60] w-[min(260px,calc(100vw-32px))] rounded-2xl border border-blue-100 bg-white p-2 shadow-[0_12px_32px_rgba(15,23,42,0.14)] md:bottom-0 md:right-[calc(100%+12px)] md:w-[280px]"
+        >
+          <p className="px-3 pb-2 pt-1 text-sm font-bold text-[#0068FF]">Zalo</p>
+          <div className="grid gap-1 border-t border-blue-100 pt-1">
+            {zaloContacts.map((contact, index) => (
+              <a
+                key={contact.href}
+                href={contact.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsZaloOpen(false)}
+                style={{ "--zalo-contact-delay": `${40 + index * 40}ms` } as CSSProperties}
+                className="zalo-contact-row group flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 text-[#0F172A] transition-[background-color,transform] duration-200 ease-out hover:translate-x-0.5 hover:bg-blue-50 focus-visible:bg-blue-50"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="block text-xs font-semibold text-[#0068FF]">Zalo</span>
+                  <span className="mt-0.5 block text-sm font-semibold text-[#334155]">{contact.displayPhone}</span>
+                </span>
+                <span aria-hidden="true" className="text-lg text-[#0068FF] transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
       <button
         type="button"
         onClick={handleBackToTop}
