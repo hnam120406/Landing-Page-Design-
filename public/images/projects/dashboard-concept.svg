@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Dashboard concept</title>
+  <desc id="desc">Abstract concept design for a clear management dashboard.</desc>
+  <rect width="1200" height="750" fill="#f7f8fa"/>
+  <rect x="72" y="62" width="1056" height="626" rx="26" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="72" y="62" width="226" height="626" rx="26" fill="#0f172a"/>
+  <circle cx="122" cy="112" r="13" fill="#f97316"/>
+  <rect x="150" y="102" width="90" height="18" rx="9" fill="#ffffff" opacity=".92"/>
+  <rect x="112" y="182" width="132" height="40" rx="12" fill="#f97316"/>
+  <rect x="112" y="248" width="132" height="12" rx="6" fill="#ffffff" opacity=".48"/>
+  <rect x="112" y="282" width="112" height="12" rx="6" fill="#ffffff" opacity=".32"/>
+  <rect x="112" y="316" width="128" height="12" rx="6" fill="#ffffff" opacity=".32"/>
+  <rect x="112" y="350" width="96" height="12" rx="6" fill="#ffffff" opacity=".32"/>
+  <rect x="338" y="98" width="170" height="20" rx="10" fill="#0f172a"/>
+  <rect x="920" y="92" width="88" height="32" rx="16" fill="#fff7ed"/>
+  <circle cx="1050" cy="108" r="18" fill="#cbd5e1"/>
+  <rect x="338" y="164" width="220" height="116" rx="18" fill="#fff7ed"/>
+  <rect x="584" y="164" width="220" height="116" rx="18" fill="#f7f8fa" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="830" y="164" width="220" height="116" rx="18" fill="#f7f8fa" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="370" y="200" width="92" height="14" rx="7" fill="#f97316" opacity=".82"/>
+  <rect x="370" y="232" width="124" height="20" rx="10" fill="#0f172a" opacity=".84"/>
+  <rect x="616" y="200" width="92" height="14" rx="7" fill="#94a3b8"/>
+  <rect x="616" y="232" width="124" height="20" rx="10" fill="#0f172a" opacity=".84"/>
+  <rect x="862" y="200" width="92" height="14" rx="7" fill="#94a3b8"/>
+  <rect x="862" y="232" width="124" height="20" rx="10" fill="#0f172a" opacity=".84"/>
+  <rect x="338" y="326" width="712" height="280" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+  <path d="M398 530 492 466l82 44 102-116 96 62 112-138 100 82" fill="none" stroke="#f97316" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M398 560h590" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="8 12"/>
+  <path d="M398 486h590M398 412h590M398 338h590" stroke="#e2e8f0" stroke-width="3"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Landing page concept</title>
+  <desc id="desc">Abstract concept design for a service landing page.</desc>
+  <rect width="1200" height="750" fill="#f7f8fa"/>
+  <rect x="72" y="62" width="1056" height="626" rx="26" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="72" y="62" width="1056" height="74" rx="26" fill="#fff7ed"/>
+  <circle cx="112" cy="99" r="10" fill="#f97316"/>
+  <rect x="142" y="91" width="112" height="16" rx="8" fill="#0f172a"/>
+  <rect x="780" y="93" width="66" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="872" y="93" width="66" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="964" y="84" width="112" height="30" rx="15" fill="#f97316"/>
+  <rect x="132" y="206" width="350" height="24" rx="12" fill="#0f172a"/>
+  <rect x="132" y="248" width="296" height="24" rx="12" fill="#0f172a" opacity=".84"/>
+  <rect x="132" y="308" width="390" height="14" rx="7" fill="#94a3b8"/>
+  <rect x="132" y="334" width="330" height="14" rx="7" fill="#cbd5e1"/>
+  <rect x="132" y="390" width="142" height="48" rx="14" fill="#f97316"/>
+  <rect x="298" y="390" width="142" height="48" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="638" y="194" width="388" height="290" rx="24" fill="#ffedd5"/>
+  <rect x="672" y="232" width="320" height="188" rx="16" fill="#ffffff" stroke="#fed7aa" stroke-width="3"/>
+  <rect x="704" y="266" width="130" height="18" rx="9" fill="#f97316" opacity=".82"/>
+  <rect x="704" y="306" width="206" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="704" y="332" width="172" height="12" rx="6" fill="#e2e8f0"/>
+  <rect x="704" y="376" width="90" height="16" rx="8" fill="#0f172a" opacity=".84"/>
+  <rect x="132" y="552" width="250" height="58" rx="16" fill="#f7f8fa" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="404" y="552" width="250" height="58" rx="16" fill="#f7f8fa" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="676" y="552" width="250" height="58" rx="16" fill="#f7f8fa" stroke="#e2e8f0" stroke-width="3"/>
+</svg>

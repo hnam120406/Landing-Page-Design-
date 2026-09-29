@@ -1,7 +1,10 @@
 import Audience from "@/components/Audience";
+import Capabilities from "@/components/Capabilities";
+import Deliverables from "@/components/Deliverables";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import SocialFloating from "@/components/SocialFloating";
 import Workflow from "@/components/Workflow";
@@ -13,9 +16,12 @@ export default function Home() {
 
       <main>
         <Hero />
+        <Capabilities />
         <Services />
+        <Projects />
         <Audience />
         <Workflow />
+        <Deliverables />
       </main>
 
       <Footer />
