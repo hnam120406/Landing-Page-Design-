@@ -1,12 +1,13 @@
 import { site } from "@/data/site";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section id="home" className="relative section-shell overflow-hidden bg-white">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_78%_16%,rgba(249,115,22,0.10),transparent_34%)]" />
 
-      <div className="page-container relative grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
+      <div className="page-container hero-container relative grid items-center gap-12 lg:grid-cols-[0.96fr_1.04fr] lg:gap-14 min-[1440px]:gap-16">
         <div className="min-w-0 max-w-3xl">
           <Reveal>
             <p className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.08em] text-brand lg:text-[12px]">
@@ -49,27 +50,18 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={360} className="min-w-0">
-          <div aria-hidden="true" className="relative min-w-0 overflow-hidden rounded-[24px] border border-border bg-background-soft p-5 shadow-[var(--shadow-soft)] sm:p-8 lg:p-10">
-            <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-brand-soft/80 blur-3xl" />
-            <div className="relative rounded-[20px] border border-border bg-white p-5 sm:p-7">
-              <div className="flex items-center justify-between gap-4 border-b border-border pb-5">
-                <span className="h-3 w-32 rounded-full bg-brand/80" />
-                <span className="size-10 rounded-xl bg-brand-soft" />
-              </div>
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                {["w-3/4", "w-2/3", "w-4/5"].map((width) => (
-                  <div key={width} className="rounded-2xl border border-border bg-background-soft p-4">
-                    <span className="block h-2 w-8 rounded-full bg-brand/70" />
-                    <span className={`mt-5 block h-3 rounded-full bg-text-primary/15 ${width}`} />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 rounded-2xl bg-dark p-5">
-                <span className="block h-2 w-20 rounded-full bg-white/50" />
-                <span className="mt-3 block h-3 w-3/4 rounded-full bg-white/80" />
-              </div>
-            </div>
+        <Reveal delay={360} className="hero-visual min-w-0">
+          <div className="relative flex min-w-0 items-center justify-center lg:justify-end">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-[12%] top-[16%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(249,115,22,0.12),transparent_68%)] blur-2xl" />
+            <Image
+              src="/images/hero/website-design-mockup.png"
+              alt="Minh họa thiết kế website responsive trên laptop và điện thoại"
+              width={1596}
+              height={986}
+              priority
+              sizes="(min-width: 1024px) min(720px, 50vw), (min-width: 768px) 720px, min(100vw - 32px, 600px)"
+              className="hero-mockup relative h-auto w-full max-w-[720px] object-contain drop-shadow-[0_18px_28px_rgba(15,23,42,0.10)]"
+            />
           </div>
         </Reveal>
       </div>
