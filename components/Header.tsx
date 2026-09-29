@@ -14,7 +14,7 @@ const navigation: NavigationItem[] = [
 ];
 
 function BrandMark() {
-  return <Image src="/brand/logo.png" width={1254} height={1254} alt="" aria-hidden="true" priority className="h-auto w-[120px] shrink-0 object-contain md:w-[145px] lg:w-[170px] min-[1440px]:w-[190px]" />;
+  return <Image src="/brand/logo.png" width={1254} height={1254} alt="" aria-hidden="true" priority className="motion-logo h-auto w-[120px] shrink-0 object-contain md:w-[145px] lg:w-[170px] min-[1440px]:w-[190px]" />;
 }
 
 export default function Header() {

@@ -53,7 +53,7 @@ export default function SocialFloating() {
   }
 
   return (
-    <aside className="floating-controls fixed right-4 z-30 flex flex-col gap-2.5 md:right-5 md:gap-3 xl:right-7 xl:gap-3.5" aria-label="Liên kết nhanh">
+    <aside className="floating-controls motion-enter fixed right-4 z-30 flex flex-col gap-2.5 md:right-5 md:gap-3 xl:right-7 xl:gap-3.5" aria-label="Liên kết nhanh">
       {site.zaloUrl ? (
         <a
           href={site.zaloUrl}
@@ -66,16 +66,17 @@ export default function SocialFloating() {
           <SocialIcon type="zalo" />
         </a>
       ) : null}
-      {isBackToTopVisible ? (
-        <button
-          type="button"
-          onClick={handleBackToTop}
-          aria-label="Về đầu trang"
-          className="flex size-14 items-center justify-center rounded-full border border-white/10 bg-dark text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.04] hover:bg-dark-soft hover:shadow-[0_14px_30px_rgba(15,23,42,0.2)] md:size-16 xl:size-[72px]"
-        >
-          <span aria-hidden="true" className="text-2xl leading-none md:text-[28px] xl:text-[30px]">↑</span>
-        </button>
-      ) : null}
+      <button
+        type="button"
+        onClick={handleBackToTop}
+        aria-label="Về đầu trang"
+        aria-hidden={!isBackToTopVisible}
+        tabIndex={isBackToTopVisible ? 0 : -1}
+        disabled={!isBackToTopVisible}
+        className={`flex size-14 items-center justify-center rounded-full border border-[#FDBA74] bg-white text-[#EA580C] shadow-[0_10px_24px_rgba(154,52,18,0.16)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.04] hover:border-[#F97316] hover:bg-[#FFF7ED] hover:shadow-[0_14px_30px_rgba(154,52,18,0.2)] md:size-16 xl:size-[72px] ${isBackToTopVisible ? "relative translate-y-0 opacity-100" : "pointer-events-none absolute right-0 translate-y-2 opacity-0"}`}
+      >
+        <span aria-hidden="true" className="text-2xl leading-none md:text-[28px] xl:text-[30px]">↑</span>
+      </button>
     </aside>
   );
 }

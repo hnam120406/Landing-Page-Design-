@@ -106,8 +106,64 @@ section[id] {
   padding-block: 64px;
 }
 
+.footer-shell {
+  background: linear-gradient(180deg, #ffffff 0%, #fff7ed 35%, #ffedd5 100%);
+  color: #7c2d12;
+}
+
+.footer-bottom {
+  border-top: 1px solid #fed7aa;
+  background: #ffedd5;
+}
+
 .floating-controls {
   bottom: max(28px, calc(env(safe-area-inset-bottom) + 20px));
+}
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-ready.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-logo {
+  animation: logo-enter 440ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-enter {
+  animation: motion-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes logo-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes motion-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 480px) {
@@ -128,7 +184,7 @@ section[id] {
   }
 
   .section-shell {
-    padding-block: 80px;
+    padding-block: 72px;
   }
 }
 
@@ -138,7 +194,7 @@ section[id] {
   }
 
   .section-shell {
-    padding-block: 96px;
+    padding-block: 88px;
   }
 }
 
@@ -150,7 +206,7 @@ section[id] {
 
 @media (min-width: 1536px) {
   .section-shell {
-    padding-block: 112px;
+    padding-block: 104px;
   }
 }
 
@@ -166,5 +222,15 @@ section[id] {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .reveal-ready,
+  .reveal-ready.reveal-visible,
+  .motion-logo,
+  .motion-enter {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
   }
 }
