@@ -178,9 +178,9 @@ section[id] {
 }
 
 .zalo-attention {
-  display: inline-flex;
-  animation: zalo-shake 760ms cubic-bezier(0.22, 1, 0.36, 1) 1;
+  animation: zalo-call-attention 1120ms cubic-bezier(0.22, 1, 0.36, 1) 1;
   transform-origin: center;
+  will-change: transform, box-shadow;
 }
 
 @keyframes logo-enter {
@@ -207,29 +207,60 @@ section[id] {
   }
 }
 
-@keyframes zalo-shake {
-  from {
-    transform: rotate(0deg);
+@keyframes zalo-call-attention {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+    transform: scale(1) rotate(0deg);
   }
 
-  20% {
-    transform: rotate(-4deg);
+  8% {
+    box-shadow: 0 0 0 6px rgba(0, 104, 255, 0.14), 0 14px 34px rgba(0, 104, 255, 0.3);
+    transform: scale(1.06) rotate(-9deg);
+  }
+
+  16% {
+    box-shadow: 0 0 0 11px rgba(0, 104, 255, 0.08), 0 16px 38px rgba(0, 104, 255, 0.34);
+    transform: scale(1.08) rotate(9deg);
+  }
+
+  24% {
+    transform: scale(1.05) rotate(-8deg);
+  }
+
+  32% {
+    box-shadow: 0 0 0 8px rgba(0, 104, 255, 0.1), 0 14px 34px rgba(0, 104, 255, 0.3);
+    transform: scale(1.07) rotate(8deg);
   }
 
   40% {
-    transform: rotate(4deg);
+    transform: scale(1.04) rotate(-6deg);
+  }
+
+  48% {
+    transform: scale(1.05) rotate(6deg);
   }
 
   60% {
-    transform: rotate(-3deg);
+    box-shadow: 0 0 0 5px rgba(0, 104, 255, 0.08), 0 12px 30px rgba(0, 104, 255, 0.24);
+    transform: scale(1.02) rotate(-3deg);
   }
 
-  80% {
-    transform: rotate(3deg);
+  72% {
+    transform: scale(1.02) rotate(3deg);
+  }
+}
+
+@keyframes zalo-attention-reduced {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+    transform: scale(1);
   }
 
-  to {
-    transform: rotate(0deg);
+  50% {
+    box-shadow: 0 0 0 5px rgba(0, 104, 255, 0.1), 0 12px 28px rgba(0, 104, 255, 0.22);
+    transform: scale(1.03);
   }
 }
 
@@ -297,12 +328,16 @@ section[id] {
   .hero-visual.reveal-ready.reveal-visible,
   .motion-logo,
   .motion-enter,
-  .home-link,
-  .zalo-attention {
+  .home-link {
     opacity: 1;
     transform: none;
     transition: none;
     animation: none;
+  }
+
+  .zalo-attention {
+    animation: zalo-attention-reduced 900ms ease-out 1 !important;
+    transform-origin: center;
   }
 
   .hero-mockup {
