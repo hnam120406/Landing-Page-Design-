@@ -8,7 +8,6 @@ const navigation: NavigationItem[] = [
   { href: "#home", label: "Trang chủ" },
   { href: "#services", label: "Dịch vụ" },
   { href: "#projects", label: "Giao diện" },
-  { href: "#audience", label: "Đối tượng" },
   { href: "#workflow", label: "Quy trình" },
 ];
 
@@ -19,7 +18,7 @@ function BrandMark() {
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-white/90 backdrop-blur-md">
-      <div className="page-container flex min-h-[76px] items-center justify-between gap-3 md:min-h-[82px] md:gap-5 lg:min-h-[88px] lg:gap-6 min-[1440px]:min-h-[92px]">
+      <div className="page-container flex min-h-[76px] items-center justify-between gap-3 md:min-h-[80px] md:gap-5 lg:min-h-[84px] lg:gap-6 min-[1440px]:min-h-[88px]">
         <HomeLink className="flex min-h-11 min-w-0 items-center" aria-label={`${site.brandName} - Trang chủ`}>
           <BrandMark />
         </HomeLink>

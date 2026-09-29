@@ -1,5 +1,6 @@
 export type Service = {
   id: string;
+  label: string;
   title: string;
   description: string;
 };
@@ -31,17 +32,11 @@ export type ProjectShowcase = {
   alt: string;
 };
 
-export type Deliverable = {
-  id: string;
-  title: string;
-  description: string;
-};
-
 export const site = {
   brandName: "Flash Honner",
-  heroEyebrow: "THIẾT KẾ FIGMA • PHÁT TRIỂN WEBSITE",
-  heroHeadline: "Thiết kế Figma và xây dựng website theo yêu cầu.",
-  heroDescription: "Từ ý tưởng đến giao diện và website hoàn chỉnh.",
+  heroEyebrow: "THIẾT KẾ FIGMA • WEBSITE THEO YÊU CẦU",
+  heroHeadline: "Bạn có ý tưởng. Flash Honner biến nó thành website hoàn chỉnh.",
+  heroDescription: "Thiết kế giao diện, xây dựng website và hoàn thiện sản phẩm theo nhu cầu thực tế của bạn.",
   heroNote: "Không cần biết công nghệ. Chỉ cần nói rõ bạn muốn làm gì.",
   capabilities: [
     { id: "figma", label: "FIGMA", title: "Thiết kế giao diện" },
@@ -51,40 +46,44 @@ export const site = {
   services: [
     {
       id: "figma",
+      label: "FIGMA",
       title: "Thiết kế Figma",
-      description: "Thiết kế giao diện theo nhu cầu.",
+      description: "Nhìn rõ giao diện trước khi bắt đầu code.",
     },
     {
       id: "website",
+      label: "WEBSITE",
       title: "Xây dựng website",
-      description: "Code website từ thiết kế đã thống nhất.",
+      description: "Biến thiết kế thành website responsive hoàn chỉnh.",
     },
     {
       id: "features",
+      label: "CHỨC NĂNG",
       title: "Phát triển chức năng",
-      description: "Xây dựng chức năng phù hợp với dự án.",
+      description: "Xây dựng các chức năng phù hợp với nhu cầu dự án.",
     },
     {
       id: "handover",
-      title: "Bàn giao",
-      description: "Source code và hướng dẫn sử dụng.",
+      label: "BÀN GIAO",
+      title: "Bàn giao dự án",
+      description: "Source code và hướng dẫn theo phạm vi đã thống nhất.",
     },
   ] satisfies Service[],
   audiences: [
     {
       id: "students",
       title: "Sinh viên",
-      description: "Website bài tập và đồ án.",
+      description: "Website bài tập, đồ án và sản phẩm học tập.",
     },
     {
       id: "educators",
       title: "Giảng viên / Giáo viên",
-      description: "Website môn học và tài liệu.",
+      description: "Website môn học, tài liệu và nội dung giáo dục.",
     },
     {
       id: "individuals",
-      title: "Cá nhân",
-      description: "Portfolio và landing page.",
+      title: "Cá nhân / Freelancer",
+      description: "Portfolio, landing page và website dịch vụ.",
     },
     {
       id: "small-business",
@@ -95,7 +94,7 @@ export const site = {
   workflow: [
     { number: "01", title: "Trao đổi", description: "Hiểu nhu cầu." },
     { number: "02", title: "Thiết kế", description: "Xây dựng Figma." },
-    { number: "03", title: "Phát triển", description: "Code và hoàn thiện website." },
+    { number: "03", title: "Phát triển", description: "Hoàn thiện website." },
     { number: "04", title: "Bàn giao", description: "Kiểm tra và bàn giao." },
   ] satisfies WorkflowStep[],
   projects: [
@@ -124,15 +123,8 @@ export const site = {
       alt: "Thiết kế minh họa website responsive trên desktop và mobile",
     },
   ] satisfies ProjectShowcase[],
-  deliverables: [
-    { id: "design", title: "Giao diện", description: "Thiết kế theo nhu cầu." },
-    { id: "website", title: "Website", description: "Hoàn thiện theo phạm vi đã thống nhất." },
-    { id: "source", title: "Source code", description: "Bàn giao theo dự án." },
-    { id: "guide", title: "Hướng dẫn", description: "Hỗ trợ cài đặt và sử dụng." },
-  ] satisfies Deliverable[],
   footerDescription: "Thiết kế Figma & phát triển website theo yêu cầu.",
   copyright: "© 2026 Flash Honner",
-  zaloUrl: "https://zalo.me/0379052767",
 } as const;
 
 export type Site = typeof site;

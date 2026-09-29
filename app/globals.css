@@ -76,24 +76,24 @@ body {
 }
 
 section[id] {
-  scroll-margin-top: 104px;
+  scroll-margin-top: 96px;
 }
 
 @media (min-width: 768px) {
   section[id] {
-    scroll-margin-top: 112px;
+    scroll-margin-top: 104px;
   }
 }
 
 @media (min-width: 1024px) {
   section[id] {
-    scroll-margin-top: 120px;
+    scroll-margin-top: 112px;
   }
 }
 
 @media (min-width: 1440px) {
   section[id] {
-    scroll-margin-top: 124px;
+    scroll-margin-top: 116px;
   }
 }
 
@@ -107,7 +107,7 @@ section[id] {
 }
 
 .section-shell {
-  padding-block: 44px;
+  padding-block: 48px;
 }
 
 .footer-shell {
@@ -173,17 +173,14 @@ section[id] {
   transform: scale(0.97);
 }
 
-.zalo-popover {
-  transform-origin: bottom right;
-  animation: zalo-popover-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.zalo-contact-row {
-  animation: zalo-contact-in 260ms cubic-bezier(0.22, 1, 0.36, 1) var(--zalo-contact-delay, 40ms) both;
-}
-
 .motion-enter {
   animation: motion-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.zalo-attention {
+  display: inline-flex;
+  animation: zalo-shake 760ms cubic-bezier(0.22, 1, 0.36, 1) 1;
+  transform-origin: center;
 }
 
 @keyframes logo-enter {
@@ -210,25 +207,29 @@ section[id] {
   }
 }
 
-@keyframes zalo-popover-in {
+@keyframes zalo-shake {
   from {
-    opacity: 0;
-    transform: translateY(8px) scale(0.97);
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-4deg);
+  }
+
+  40% {
+    transform: rotate(4deg);
+  }
+
+  60% {
+    transform: rotate(-3deg);
+  }
+
+  80% {
+    transform: rotate(3deg);
   }
 
   to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes zalo-contact-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
+    transform: rotate(0deg);
   }
 }
 
@@ -250,7 +251,7 @@ section[id] {
   }
 
   .section-shell {
-    padding-block: 52px;
+    padding-block: 56px;
   }
 }
 
@@ -260,7 +261,7 @@ section[id] {
   }
 
   .section-shell {
-    padding-block: 60px;
+    padding-block: 64px;
   }
 }
 
@@ -272,7 +273,7 @@ section[id] {
 
 @media (min-width: 1536px) {
   .section-shell {
-    padding-block: 68px;
+    padding-block: 72px;
   }
 }
 
@@ -297,8 +298,7 @@ section[id] {
   .motion-logo,
   .motion-enter,
   .home-link,
-  .zalo-popover,
-  .zalo-contact-row {
+  .zalo-attention {
     opacity: 1;
     transform: none;
     transition: none;
