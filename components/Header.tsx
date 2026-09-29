@@ -8,8 +8,7 @@ const navigation: NavigationItem[] = [
   { href: "#home", label: "Trang chủ" },
   { href: "#services", label: "Dịch vụ" },
   { href: "#audience", label: "Đối tượng" },
-  { href: "#process", label: "Quy trình" },
-  { href: "#requirements", label: "Yêu cầu" },
+  { href: "#workflow", label: "Quy trình" },
 ];
 
 function BrandMark() {

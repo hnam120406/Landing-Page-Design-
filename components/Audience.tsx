@@ -6,9 +6,7 @@ export default function Audience() {
     <section id="audience" className="section-shell bg-white">
       <div className="page-container">
         <Reveal className="max-w-3xl">
-          <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-brand lg:text-[12px]">Phù hợp với ai?</p>
-          <h2 className="mt-4 max-w-[18ch] text-[28px] font-bold leading-[1.18] tracking-[-0.03em] text-text-primary md:text-[30px] lg:text-[34px] min-[1440px]:text-[36px]">Một website tốt bắt đầu từ đúng nhu cầu.</h2>
-          <p className="mt-5 max-w-[44rem] text-[14px] leading-[1.65] text-text-secondary md:text-[15px] lg:text-[15px] min-[1440px]:text-base">Nhóm làm việc trực tiếp với người đang có một mục tiêu cụ thể, dù điểm bắt đầu là đề bài, nội dung, Figma hay chỉ là một ý tưởng còn chưa rõ cấu trúc.</p>
+          <h2 className="max-w-[18ch] text-[28px] font-bold leading-[1.18] tracking-[-0.03em] text-text-primary md:text-[30px] lg:text-[34px] min-[1440px]:text-[36px]">Phù hợp với ai?</h2>
         </Reveal>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:mt-10 lg:grid-cols-3 lg:gap-5">

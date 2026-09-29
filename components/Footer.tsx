@@ -5,14 +5,12 @@ import Image from "next/image";
 type FooterNavigationItem = {
   href: string;
   label: string;
-  external?: boolean;
 };
 
 const footerNavigation: FooterNavigationItem[] = [
   { href: "#services", label: "Dịch vụ" },
-  { href: "#process", label: "Quy trình" },
-  { href: "#requirements", label: "Yêu cầu" },
-  { href: site.zaloUrl, label: "Liên hệ", external: true },
+  { href: "#audience", label: "Đối tượng" },
+  { href: "#workflow", label: "Quy trình" },
 ];
 
 export default function Footer() {
@@ -30,7 +28,7 @@ export default function Footer() {
           <ul className="grid grid-cols-2 gap-x-8 gap-y-1 text-[15px] font-medium text-[#9A3412] sm:grid-cols-3 md:grid-cols-2 sm:text-base lg:text-base">
             {footerNavigation.map((item) => (
               <li key={item.href}>
-                <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} className="inline-flex min-h-11 items-center transition-[color,transform] duration-200 hover:translate-x-0.5 hover:text-[#F97316] focus-visible:text-[#F97316]">
+                <a href={item.href} className="inline-flex min-h-11 items-center transition-[color,transform] duration-200 hover:translate-x-0.5 hover:text-[#F97316] focus-visible:text-[#F97316]">
                   {item.label}
                 </a>
               </li>
@@ -41,7 +39,6 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="page-container py-5 text-[14px] text-[#9A3412] lg:py-6 lg:text-[15px]">
           <p>{site.copyright}</p>
-          <a href={site.zaloUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center text-[#C2410C] transition-colors duration-200 hover:text-[#F97316] focus-visible:text-[#F97316]">Zalo: 037 905 2767</a>
         </div>
       </div>
     </footer>

@@ -25,30 +25,23 @@ export default function Hero() {
           <Reveal delay={210}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#requirements"
+                href={site.zaloUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-brand px-5 text-center text-[14px] font-semibold text-white shadow-[var(--shadow-soft)] transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-[var(--shadow-brand-hover)] active:translate-y-0 active:bg-brand-active focus-visible:bg-brand-hover sm:w-auto lg:min-h-[50px] lg:text-[15px] min-[1440px]:min-h-[52px]"
               >
-                Gửi yêu cầu của bạn
+                Trao đổi dự án
                 <span aria-hidden="true" className="ml-2">→</span>
               </a>
               <a
-                href="#process"
+                href="#workflow"
                 className="inline-flex min-h-12 w-full items-center justify-center whitespace-nowrap rounded-xl border border-border-strong bg-white px-5 text-center text-[14px] font-semibold text-text-primary transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand-border hover:bg-brand-soft hover:text-brand active:translate-y-0 sm:w-auto lg:min-h-[50px] lg:text-[15px] min-[1440px]:min-h-[52px]"
               >
-                Xem cách nhóm làm việc
+                Xem quy trình
               </a>
             </div>
           </Reveal>
           <Reveal delay={280}>
-            <ul aria-label="Năng lực chính" className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-semibold text-text-secondary md:text-[15px]">
-              <li>Thiết kế Figma</li>
-              <li aria-hidden="true" className="text-brand">•</li>
-              <li>Code giao diện thủ công</li>
-              <li aria-hidden="true" className="text-brand">•</li>
-              <li>Phát triển theo yêu cầu</li>
-            </ul>
-          </Reveal>
-          <Reveal delay={340}>
             <p className="mt-5 flex max-w-[34rem] items-start gap-3 text-[14px] leading-6 text-text-muted md:text-[15px]">
               <span aria-hidden="true" className="mt-2 size-2 shrink-0 rounded-full bg-brand" />
               <span>{site.heroNote}</span>
@@ -57,34 +50,26 @@ export default function Hero() {
         </div>
 
         <Reveal delay={360} className="min-w-0">
-          <div className="relative min-w-0 overflow-hidden rounded-[24px] border border-border bg-background-soft p-5 shadow-[var(--shadow-soft)] sm:p-8 lg:p-10">
-          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-brand-soft/80 blur-3xl" />
-          <div className="relative rounded-[20px] border border-border bg-white p-5 sm:p-7">
-            <div className="flex items-start justify-between gap-4 border-b border-border pb-5">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand">Flash Honner</p>
-                <p className="mt-2 text-[17px] font-bold text-text-primary md:text-[19px]">Một dự án rõ ràng từ đầu</p>
+          <div aria-hidden="true" className="relative min-w-0 overflow-hidden rounded-[24px] border border-border bg-background-soft p-5 shadow-[var(--shadow-soft)] sm:p-8 lg:p-10">
+            <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-brand-soft/80 blur-3xl" />
+            <div className="relative rounded-[20px] border border-border bg-white p-5 sm:p-7">
+              <div className="flex items-center justify-between gap-4 border-b border-border pb-5">
+                <span className="h-3 w-32 rounded-full bg-brand/80" />
+                <span className="size-10 rounded-xl bg-brand-soft" />
               </div>
-              <span aria-hidden="true" className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-xl font-bold text-brand">FH</span>
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {["w-3/4", "w-2/3", "w-4/5"].map((width) => (
+                  <div key={width} className="rounded-2xl border border-border bg-background-soft p-4">
+                    <span className="block h-2 w-8 rounded-full bg-brand/70" />
+                    <span className={`mt-5 block h-3 rounded-full bg-text-primary/15 ${width}`} />
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 rounded-2xl bg-dark p-5">
+                <span className="block h-2 w-20 rounded-full bg-white/50" />
+                <span className="mt-3 block h-3 w-3/4 rounded-full bg-white/80" />
+              </div>
             </div>
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              {[
-                ["01", "Làm rõ", "Mục tiêu & phạm vi"],
-                ["02", "Thiết kế", "Figma & cấu trúc"],
-                ["03", "Phát triển", "Website có thể dùng"],
-              ].map(([number, title, description]) => (
-                <div key={number} className="rounded-2xl border border-border bg-background-soft p-4">
-                  <span className="text-sm font-bold text-brand">{number}</span>
-                  <p className="mt-4 text-[15px] font-bold text-text-primary">{title}</p>
-                  <p className="mt-1 text-sm leading-6 text-text-muted">{description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-5 rounded-2xl bg-dark p-5 text-white">
-              <p className="text-sm font-semibold text-white/60">Cách bắt đầu</p>
-              <p className="mt-2 text-[15px] font-semibold leading-7">Chỉ cần gửi mục tiêu và những gì bạn đang cần làm rõ.</p>
-            </div>
-          </div>
           </div>
         </Reveal>
       </div>
