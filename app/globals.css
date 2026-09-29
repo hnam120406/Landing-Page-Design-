@@ -103,7 +103,7 @@ section[id] {
 }
 
 .section-shell {
-  padding-block: 64px;
+  padding-block: 56px;
 }
 
 .footer-shell {
@@ -184,7 +184,7 @@ section[id] {
   }
 
   .section-shell {
-    padding-block: 72px;
+    padding-block: 64px;
   }
 }
 
@@ -194,7 +194,7 @@ section[id] {
   }
 
   .section-shell {
-    padding-block: 88px;
+    padding-block: 80px;
   }
 }
 
@@ -206,7 +206,7 @@ section[id] {
 
 @media (min-width: 1536px) {
   .section-shell {
-    padding-block: 104px;
+    padding-block: 96px;
   }
 }
 

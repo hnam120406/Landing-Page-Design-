@@ -17,11 +17,6 @@ export type WorkflowStep = {
   description: string;
 };
 
-export type FAQItem = {
-  question: string;
-  answer: string;
-};
-
 export const site = {
   brandName: "Flash Honner",
   productName: "Product Design & Development",
@@ -122,15 +117,6 @@ export const site = {
     "Hình thức bàn giao",
     "Hỗ trợ sau bàn giao",
   ],
-  faq: [
-    { question: "Tôi chưa có Figma thì có làm website được không?", answer: "Có. Nhóm có thể bắt đầu từ yêu cầu và xây dựng cấu trúc giao diện trước." },
-    { question: "Tôi đã có Figma thì sao?", answer: "Có thể trao đổi để phát triển website dựa trên thiết kế hiện có." },
-    { question: "Tôi không biết lập trình có trao đổi được không?", answer: "Được. Bạn chỉ cần mô tả mục tiêu và cách bạn muốn website hoạt động." },
-    { question: "Có nhận website nhỏ không?", answer: "Có. Không phải dự án nào cũng cần một hệ thống lớn; nhóm ưu tiên làm vừa đủ với nhu cầu." },
-    { question: "Có nhận dự án sinh viên không?", answer: "Có thể hỗ trợ thiết kế, cấu trúc, lập trình, cài đặt và hướng dẫn theo phạm vi đã thống nhất. Người học vẫn nên hiểu và có khả năng trình bày sản phẩm của mình." },
-    { question: "Website có responsive không?", answer: "Khả năng hiển thị phù hợp trên điện thoại, máy tính bảng và máy tính sẽ được xác định theo phạm vi dự án ngay từ đầu." },
-    { question: "Có hỗ trợ sau bàn giao không?", answer: "Có thể có. Bảo hành 12 tháng kể từ ngày bàn giao đối với các lỗi thuộc chức năng đã thống nhất trong phạm vi dự án; phạm vi hỗ trợ cụ thể được xác nhận riêng cho từng dự án." },
-  ] satisfies FAQItem[],
   footerDescription:
     "Thiết kế Figma và phát triển website theo yêu cầu cho cá nhân, sinh viên, giáo viên, nhóm nhỏ và các dự án cần một sản phẩm rõ ràng, dễ sử dụng.",
   copyright: "© 2026 Flash Honner. Product Design and Development.",

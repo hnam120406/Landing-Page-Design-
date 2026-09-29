@@ -6,7 +6,7 @@ import { scrollHomeWithoutHash } from "@/components/useActiveSection";
 
 function SocialIcon({ type }: { type: "zalo" | "instagram" | "youtube" }) {
   if (type === "zalo") {
-    return <span aria-hidden="true" className="text-[13px] font-bold leading-none tracking-[-0.04em] md:text-[15px] xl:text-[17px]">Zalo</span>;
+    return <span aria-hidden="true" className="text-[13px] font-bold leading-none tracking-[-0.04em] md:text-[15px] xl:text-base">Zalo</span>;
   }
 
   if (type === "instagram") {

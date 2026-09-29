@@ -10,7 +10,6 @@ const navigation: NavigationItem[] = [
   { href: "#audience", label: "Đối tượng" },
   { href: "#process", label: "Quy trình" },
   { href: "#requirements", label: "Yêu cầu" },
-  { href: "#faq", label: "FAQ" },
 ];
 
 function BrandMark() {

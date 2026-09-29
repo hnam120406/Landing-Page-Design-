@@ -94,7 +94,7 @@ export default function MobileNavigation({ items, activeSection }: MobileNavigat
 
                     setIsOpen(false);
                   }}
-                  className="flex min-h-11 items-center rounded-xl border border-transparent px-3 text-base font-medium text-text-secondary transition-colors duration-200 hover:border-brand-border hover:bg-brand-soft hover:text-brand focus-visible:bg-brand-soft aria-[current=location]:border-brand-border aria-[current=location]:bg-brand-soft aria-[current=location]:font-semibold aria-[current=location]:text-brand"
+                  className="flex min-h-11 items-center rounded-xl border border-transparent px-3 text-[15px] font-medium text-text-secondary transition-colors duration-200 hover:border-brand-border hover:bg-brand-soft hover:text-brand focus-visible:bg-brand-soft aria-[current=location]:border-brand-border aria-[current=location]:bg-brand-soft aria-[current=location]:font-semibold aria-[current=location]:text-brand"
                 >
                   {item.label}
                 </a>
