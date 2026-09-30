@@ -16,16 +16,9 @@ export default function Hero() {
               <span>{site.heroEyebrow}</span>
             </p>
           </Reveal>
+          <h1 className="sr-only">{site.brandName}</h1>
           <Reveal delay={70}>
-            <h1 className="max-w-[20ch] text-[30px] font-bold leading-[1.1] tracking-[-0.04em] text-text-primary md:text-[36px] lg:max-w-[19ch] lg:text-[40px] min-[1440px]:text-[44px]">
-              {site.heroHeadline}
-            </h1>
-          </Reveal>
-          <Reveal delay={140}>
-            <p className="mt-5 max-w-[38rem] text-[14px] leading-[1.6] text-text-secondary md:text-[15px]">{site.heroDescription}</p>
-          </Reveal>
-          <Reveal delay={210}>
-            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
+            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
               <ZaloCtaButton className="inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-xl bg-brand px-5 text-center text-[14px] font-semibold text-white shadow-[var(--shadow-brand-hover)] transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-brand-hover active:translate-y-0 sm:w-auto lg:min-h-12 lg:text-[15px]">
                 Nhắn Zalo
                 <span aria-hidden="true" className="ml-2">→</span>
@@ -38,7 +31,7 @@ export default function Hero() {
               </a>
             </div>
           </Reveal>
-          <Reveal delay={280}>
+          <Reveal delay={140}>
             <p className="mt-4 flex max-w-[34rem] items-start gap-3 text-[14px] leading-[1.6] text-text-muted md:text-[15px]">
               <span aria-hidden="true" className="mt-2 size-2 shrink-0 rounded-full bg-brand" />
               <span>{site.heroNote}</span>

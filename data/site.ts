@@ -45,8 +45,6 @@ export type WorkflowStep = {
 export const site = {
   brandName: "Flash Honner",
   heroEyebrow: "THIẾT KẾ FIGMA • WEBSITE THEO YÊU CẦU",
-  heroHeadline: "Đồ án cần chỉn chu? FLASH HONNER hỗ trợ từ Figma đến website.",
-  heroDescription: "Từ ý tưởng, giao diện đến website demo hoặc sản phẩm chạy thực tế — tụi mình hỗ trợ theo phạm vi dự án.",
   heroNote: "Không cần biết hết công nghệ. Chỉ cần cho tụi mình biết bạn đang cần gì.",
   painPoints: [
     { id: "messy-ui", text: "Code gần xong nhưng giao diện vẫn còn rối." },
