@@ -46,16 +46,26 @@ export type AssurancePoint = {
   description: string;
 };
 
+export type ContextPoint = {
+  label: string;
+  title: string;
+};
+
 export const site = {
   brandName: "Flash Honner",
   heroEyebrow: "ĐỒ ÁN / DỰ ÁN MÔN HỌC",
   heroHeadline: "Deadline đang gần nhưng giao diện vẫn chưa ổn?",
   heroDescription: "FLASH HONNER hỗ trợ thiết kế Figma và phát triển website theo phạm vi dự án.",
   heroNote: "Có ý tưởng hoặc Figma sẵn đều được. Gửi tụi mình xem trước.",
-  contextPoints: ["THIẾT KẾ FIGMA", "WEBSITE RESPONSIVE", "TRIỂN KHAI THỰC TẾ", "SOURCE THEO PHẠM VI"],
+  contextPoints: [
+    { label: "FIGMA", title: "Thiết kế giao diện" },
+    { label: "WEBSITE", title: "Phát triển website" },
+    { label: "RESPONSIVE", title: "Desktop & Mobile" },
+    { label: "SOURCE", title: "Theo phạm vi" },
+  ] satisfies readonly ContextPoint[],
   painPoints: [
     { id: "messy-ui", text: "Code gần xong nhưng UI vẫn còn rối." },
-    { id: "figma-gap", text: "Có Figma nhưng code lên không giống thiết kế." },
+    { id: "figma-gap", text: "Có Figma nhưng dựng web lên không giống thiết kế." },
     { id: "deadline", text: "Deadline gần mà demo vẫn chưa đủ chỉn chu." },
     { id: "no-ui-specialist", text: "Không ai trong nhóm chuyên UI/UX." },
   ] satisfies readonly PainPoint[],
@@ -78,7 +88,7 @@ export const site = {
       id: "with-figma",
       label: "ĐÃ CÓ FIGMA",
       title: "Bạn có thiết kế, tụi mình dựng thành website.",
-      description: "Tụi mình kiểm tra Figma, trao đổi những điểm cần chỉnh rồi bắt đầu triển khai.",
+      description: "Tụi mình kiểm tra Figma, trao đổi những điểm cần điều chỉnh và triển khai theo phạm vi đã thống nhất.",
       steps: ["Figma", "Kiểm tra", "Code", "Responsive", "Demo"],
       bullets: [
         "Bám sát thiết kế: màu sắc, font chữ, khoảng cách và bố cục được triển khai nhất quán theo Figma.",
@@ -92,7 +102,7 @@ export const site = {
   projects: [
     {
       id: "landing-page",
-      category: "MẪU GIAO DIỆN",
+      category: "MẪU GIAO DIỆN • LANDING PAGE",
       title: "Website giới thiệu dịch vụ",
       description: "Giao diện tập trung vào nội dung chính và hành động rõ ràng.",
       image: "/images/projects/landing-page-concept.svg",
@@ -100,7 +110,7 @@ export const site = {
     },
     {
       id: "dashboard",
-      category: "MẪU GIAO DIỆN",
+      category: "MẪU GIAO DIỆN • DASHBOARD",
       title: "Web quản lý",
       description: "Bố cục rõ cho dữ liệu và thao tác.",
       image: "/images/projects/dashboard-concept.svg",
@@ -108,7 +118,7 @@ export const site = {
     },
     {
       id: "responsive",
-      category: "CONCEPT DESIGN",
+      category: "MẪU GIAO DIỆN • RESPONSIVE",
       title: "Desktop & Mobile",
       description: "Giao diện đồng nhất trên nhiều kích thước màn hình.",
       image: "/images/projects/responsive-concept.svg",
@@ -144,7 +154,7 @@ export const site = {
   trustPoints: [
     {
       id: "project-context",
-      title: "HIỂU BỐI CẢNH ĐỒ ÁN",
+      title: "HIỂU BỐI CẢNH DỰ ÁN",
       description: "Biết một dự án sinh viên cần cân bằng giữa giao diện, chức năng và thời gian.",
     },
     {
@@ -172,7 +182,7 @@ export const site = {
   assurancePoints: [
     { label: "PHẠM VI", description: "Tụi mình xác nhận phần cần làm trước khi triển khai." },
     { label: "TIẾN ĐỘ", description: "Thời gian được trao đổi dựa trên khối lượng thực tế." },
-    { label: "BÀN GIAO", description: "File và source được bàn giao theo đúng phạm vi đã thống nhất." },
+    { label: "BÀN GIAO", description: "File và source được bàn giao theo phạm vi đã thống nhất." },
   ] satisfies readonly AssurancePoint[],
   footerDescription: "Thiết kế Figma & phát triển website theo yêu cầu.",
   copyright: "© 2026 Flash Honner",
