@@ -28,14 +28,14 @@ export default function Hero() {
           <Reveal delay={210}>
             <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <ZaloCtaButton className="inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-xl bg-brand px-5 text-center text-[14px] font-semibold text-white shadow-[var(--shadow-brand-hover)] transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-brand-hover active:translate-y-0 sm:w-auto lg:min-h-12 lg:text-[15px]">
-                Nhắn Zalo
+                Nhắn Zalo để nhận tư vấn miễn phí
                 <span aria-hidden="true" className="ml-2">→</span>
               </ZaloCtaButton>
               <SectionLink
                 href="#projects"
                 className="inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-xl border border-border-strong bg-white px-4 text-center text-[14px] font-semibold text-text-primary transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand-border hover:bg-brand-soft hover:text-brand active:translate-y-0 sm:w-auto lg:min-h-12 lg:text-[15px]"
               >
-                Xem giao diện
+                Xem dự án đã làm
               </SectionLink>
             </div>
           </Reveal>

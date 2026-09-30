@@ -10,9 +10,9 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Flash Honner | Thiết kế Figma & Phát triển Website theo yêu cầu",
+  title: "Flash Honner | Thiết kế Figma & dựng website responsive cho sinh viên, nhóm nhỏ và dự án mới",
   description:
-    "Flash Honner hỗ trợ sinh viên và nhóm dự án từ thiết kế Figma đến website responsive, demo và bàn giao source theo phạm vi đã thống nhất.",
+    "Hỗ trợ từ Figma đến website chạy được trên laptop và điện thoại. Báo giá và thời gian rõ ràng trước khi bắt đầu. Nhắn Zalo để được tư vấn miễn phí.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

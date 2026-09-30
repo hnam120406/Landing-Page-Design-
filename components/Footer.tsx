@@ -10,8 +10,10 @@ type FooterNavigationItem = {
 
 const footerNavigation: FooterNavigationItem[] = [
   { href: "#services", label: "Dịch vụ" },
-  { href: "#projects", label: "Giao diện" },
+  { href: "#projects", label: "Dự án" },
+  { href: "#pricing", label: "Bảng giá" },
   { href: "#workflow", label: "Quy trình" },
+  { href: "#faq", label: "Hỏi đáp" },
 ];
 
 export default function Footer() {
