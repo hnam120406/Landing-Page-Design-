@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import Reveal from "@/components/Reveal";
+import ZaloCtaButton from "@/components/ZaloCtaButton";
 import Image from "next/image";
 
 export default function Hero() {
@@ -24,12 +25,16 @@ export default function Hero() {
             <p className="mt-5 max-w-[38rem] text-[14px] leading-[1.6] text-text-secondary md:text-[15px]">{site.heroDescription}</p>
           </Reveal>
           <Reveal delay={210}>
-            <div className="mt-6 flex">
+            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
+              <ZaloCtaButton className="inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-xl bg-brand px-5 text-center text-[14px] font-semibold text-white shadow-[var(--shadow-brand-hover)] transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-brand-hover active:translate-y-0 sm:w-auto lg:min-h-12 lg:text-[15px]">
+                Nhắn Zalo
+                <span aria-hidden="true" className="ml-2">→</span>
+              </ZaloCtaButton>
               <a
                 href="#projects"
                 className="inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-xl border border-border-strong bg-white px-4 text-center text-[14px] font-semibold text-text-primary transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand-border hover:bg-brand-soft hover:text-brand active:translate-y-0 sm:w-auto lg:min-h-12 lg:text-[15px]"
               >
-                Xem quy trình
+                Xem giao diện
               </a>
             </div>
           </Reveal>

@@ -8,6 +8,7 @@ import ContactStrip from "@/components/ContactStrip";
 import Services from "@/components/Services";
 import SocialFloating from "@/components/SocialFloating";
 import Workflow from "@/components/Workflow";
+import WhyFlashHonner from "@/components/WhyFlashHonner";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Services />
         <Projects />
         <Audience />
+        <WhyFlashHonner />
         <Workflow />
         <ContactStrip />
       </main>

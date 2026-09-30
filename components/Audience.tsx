@@ -3,20 +3,20 @@ import Reveal from "@/components/Reveal";
 
 export default function Audience() {
   return (
-    <section id="audience" className="section-shell bg-[#fffaf5]">
-      <div className="page-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <Reveal className="max-w-sm">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">ĐỐI TƯỢNG</p>
-          <h2 className="mt-2 max-w-[16ch] text-[25px] font-bold leading-[1.15] tracking-[-0.03em] text-text-primary md:text-[28px] lg:text-[30px]">Phù hợp với nhiều nhu cầu khác nhau.</h2>
+    <section aria-labelledby="deliverables-heading" className="section-shell bg-background-soft">
+      <div className="page-container">
+        <Reveal className="max-w-2xl">
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">PHẠM VI BÀN GIAO</p>
+          <h2 id="deliverables-heading" className="mt-2 text-[28px] font-bold leading-[1.18] tracking-[-0.03em] text-text-primary md:text-[34px] lg:text-[40px]">Bạn nhận được gì?</h2>
         </Reveal>
 
-        <div className="grid border-t border-border sm:grid-cols-2 sm:gap-x-8">
-          {site.audiences.map((audience, index) => (
-            <Reveal key={audience.id} delay={index * 60} className="border-b border-border py-5 sm:py-6">
+        <div className="mt-8 grid border-y border-border sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
+          {site.deliverables.map((deliverable, index) => (
+            <Reveal key={deliverable.id} delay={index * 60} className="border-b border-border px-0 py-5 last:border-b-0 sm:px-5 lg:border-b-0 lg:py-2 lg:first:pl-0 lg:last:pr-0">
               <article>
-                <span aria-hidden="true" className="mb-4 block size-2 rounded-full bg-brand" />
-                <h3 className="text-[17px] font-bold leading-[1.3] text-text-primary">{audience.title}</h3>
-                <p className="mt-2 max-w-sm text-[14px] leading-[1.6] text-text-secondary md:text-[15px]">{audience.description}</p>
+                <span className="text-[12px] font-bold tracking-[0.12em] text-brand">{deliverable.label}</span>
+                <h3 className="mt-3 text-[17px] font-bold leading-[1.3] text-text-primary">{deliverable.title}</h3>
+                <p className="mt-2 max-w-[18rem] text-[14px] leading-[1.6] text-text-secondary">{deliverable.description}</p>
               </article>
             </Reveal>
           ))}

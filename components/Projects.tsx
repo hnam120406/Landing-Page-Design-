@@ -30,7 +30,8 @@ export default function Projects() {
       <div className="page-container">
         <Reveal className="max-w-2xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">SELECTED WORK</p>
-          <h2 className="mt-2 max-w-[25ch] text-[25px] font-bold leading-[1.15] tracking-[-0.03em] text-text-primary md:text-[28px] lg:text-[30px]">Một vài giao diện để bạn nhìn thấy cách chúng tôi thiết kế.</h2>
+          <h2 className="mt-2 max-w-[25ch] text-[28px] font-bold leading-[1.18] tracking-[-0.03em] text-text-primary md:text-[34px] lg:text-[40px]">Nhìn giao diện trước khi quyết định.</h2>
+          <p className="mt-4 max-w-2xl text-[15px] leading-[1.65] text-text-secondary md:text-[16px]">Một vài mẫu để bạn hình dung cách FLASH HONNER thiết kế và trình bày sản phẩm.</p>
         </Reveal>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.45fr_0.9fr] lg:gap-10">

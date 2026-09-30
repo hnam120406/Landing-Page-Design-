@@ -1,52 +1,27 @@
 import { site } from "@/data/site";
-
-function CapabilityIcon({ id }: { id: string }) {
-  if (id === "figma") {
-    return (
-      <svg aria-hidden="true" className="size-6" viewBox="0 0 24 24" fill="none">
-        <path d="M8 3h4v6H8a3 3 0 1 1 0-6Z" fill="currentColor" />
-        <path d="M12 3h4a3 3 0 1 1 0 6h-4V3Z" fill="currentColor" opacity=".72" />
-        <path d="M8 9h4v6H8a3 3 0 1 1 0-6Z" fill="currentColor" opacity=".84" />
-        <circle cx="15" cy="12" r="3" fill="currentColor" opacity=".58" />
-        <path d="M8 15h4v3a3 3 0 1 1-3-3H8Z" fill="currentColor" opacity=".68" />
-      </svg>
-    );
-  }
-
-  if (id === "website") {
-    return (
-      <svg aria-hidden="true" className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <path d="M3 8h18M7 6h.01M10 6h.01" />
-        <path d="m8 13 2 2-2 2M13 17h3" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg aria-hidden="true" className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="7" y="3" width="10" height="18" rx="2" />
-      <path d="M10 6h4M11 18h2" />
-      <path d="M3 9v6M21 9v6" />
-    </svg>
-  );
-}
+import Reveal from "@/components/Reveal";
 
 export default function Capabilities() {
   return (
-    <section aria-label="Năng lực chính" className="border-y border-border bg-white">
-      <div className="page-container grid gap-1 py-3 sm:grid-cols-3 sm:gap-0 sm:py-4">
-        {site.capabilities.map((capability, index) => (
-          <div key={capability.id} className={`flex items-center gap-3 px-2 py-2 sm:justify-center sm:px-4 ${index > 0 ? "sm:border-l sm:border-border" : ""}`}>
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
-              <CapabilityIcon id={capability.id} />
-            </span>
-            <div>
-              <p className="text-[11px] font-bold tracking-[0.08em] text-brand">{capability.label}</p>
-              <p className="mt-0.5 text-[14px] font-medium text-text-primary">{capability.title}</p>
-            </div>
+    <section aria-labelledby="pain-points-heading" className="section-shell bg-white">
+      <div className="page-container grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+        <Reveal className="max-w-sm">
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">ĐIỂM ĐAU THƯỜNG GẶP</p>
+          <h2 id="pain-points-heading" className="mt-2 text-[28px] font-bold leading-[1.18] tracking-[-0.03em] text-text-primary md:text-[34px] lg:text-[40px]">Nghe quen không?</h2>
+          <p className="mt-4 max-w-sm text-[15px] leading-[1.65] text-text-secondary">Nhiều nhóm đã có ý tưởng hoặc code, nhưng vẫn thiếu một phần để sản phẩm trông rõ ràng và hoàn thiện hơn.</p>
+        </Reveal>
+
+        <div>
+          <div className="divide-y divide-border border-y border-border">
+            {site.painPoints.map((point, index) => (
+              <Reveal key={point.id} delay={index * 60} className="flex items-start gap-4 py-5 sm:py-6">
+                <span aria-hidden="true" className="mt-2 h-1.5 w-8 shrink-0 rounded-full bg-brand" />
+                <p className="max-w-xl text-[16px] font-medium leading-[1.55] text-text-primary">{point.text}</p>
+              </Reveal>
+            ))}
           </div>
-        ))}
+          <p className="mt-5 max-w-2xl text-[14px] leading-[1.65] text-text-secondary md:text-[15px]">Nếu đúng một trong những trường hợp trên, FLASH HONNER có thể hỗ trợ phần còn thiếu.</p>
+        </div>
       </div>
     </section>
   );

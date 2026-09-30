@@ -113,13 +113,13 @@ section[id] {
 }
 
 .footer-shell {
-  background: linear-gradient(180deg, #ffffff 0%, #fff7ed 35%, #ffedd5 100%);
-  color: #7c2d12;
+  background: var(--background);
+  color: var(--text-primary);
 }
 
 .footer-bottom {
-  border-top: 1px solid #fed7aa;
-  background: #ffedd5;
+  border-top: 1px solid var(--border);
+  background: var(--background-soft);
 }
 
 .floating-controls {
