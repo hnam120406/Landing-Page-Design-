@@ -1,5 +1,7 @@
 import Audience from "@/components/Audience";
+import Assurance from "@/components/Assurance";
 import Capabilities from "@/components/Capabilities";
+import ContextStrip from "@/components/ContextStrip";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -17,12 +19,14 @@ export default function Home() {
 
       <main>
         <Hero />
+        <ContextStrip />
         <Capabilities />
         <Services />
         <Projects />
         <Audience />
         <WhyFlashHonner />
         <Workflow />
+        <Assurance />
         <ContactStrip />
       </main>
 

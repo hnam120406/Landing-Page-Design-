@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { handleHomeNavigation } from "@/components/useActiveSection";
+import { handleSectionNavigation } from "@/components/useActiveSection";
 
 export type NavigationItem = {
   href: string;
@@ -88,10 +88,7 @@ export default function MobileNavigation({ items, activeSection }: MobileNavigat
                   href={item.href}
                   aria-current={isActive ? "location" : undefined}
                   onClick={(event) => {
-                    if (item.href === "#home") {
-                      handleHomeNavigation(event);
-                    }
-
+                    handleSectionNavigation(event);
                     setIsOpen(false);
                   }}
                   className="flex min-h-11 items-center rounded-xl border border-transparent px-3 text-[15px] font-medium text-text-secondary transition-colors duration-200 hover:border-brand-border hover:bg-brand-soft hover:text-brand focus-visible:bg-brand-soft aria-[current=location]:border-brand-border aria-[current=location]:bg-brand-soft aria-[current=location]:font-semibold aria-[current=location]:text-brand"

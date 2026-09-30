@@ -1,5 +1,3 @@
-"use client";
-
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 
 type ZaloCtaButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {

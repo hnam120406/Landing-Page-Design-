@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import Reveal from "@/components/Reveal";
+import ZaloCtaButton from "@/components/ZaloCtaButton";
 
 function ServiceFlow({ steps }: { steps: readonly string[] }) {
   return (
@@ -42,10 +43,10 @@ export default function Services() {
                 ))}
               </ul>
 
-              <a href={path.ctaHref} className="mt-7 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-brand px-5 text-[15px] font-semibold text-white transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-[var(--shadow-brand-hover)] active:translate-y-0 sm:w-fit">
+              <ZaloCtaButton className="mt-7 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-brand px-5 text-[15px] font-semibold text-white transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-[var(--shadow-brand-hover)] active:translate-y-0 sm:w-fit">
                 {path.ctaLabel}
                 <span aria-hidden="true" className="ml-2">→</span>
-              </a>
+              </ZaloCtaButton>
             </Reveal>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import HomeLink from "@/components/HomeLink";
+import SectionLink from "@/components/SectionLink";
 import Image from "next/image";
 
 type FooterNavigationItem = {
@@ -28,9 +29,9 @@ export default function Footer() {
           <ul className="grid grid-cols-2 gap-x-6 gap-y-1 text-[14px] font-medium text-text-secondary sm:grid-cols-3 md:grid-cols-2 lg:text-[15px]">
             {footerNavigation.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="inline-flex min-h-10 items-center transition-[color,transform] duration-200 hover:translate-x-0.5 hover:text-brand focus-visible:text-brand">
+                <SectionLink href={item.href} className="inline-flex min-h-10 items-center transition-[color,transform] duration-200 hover:translate-x-0.5 hover:text-brand focus-visible:text-brand">
                   {item.label}
-                </a>
+                </SectionLink>
               </li>
             ))}
           </ul>

@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import MobileNavigation, { type NavigationItem } from "@/components/MobileNavigation";
-import { handleHomeNavigation } from "@/components/useActiveSection";
+import { handleSectionNavigation } from "@/components/useActiveSection";
 import useActiveSection from "@/components/useActiveSection";
 
 type ActiveNavigationProps = {
@@ -24,9 +24,9 @@ export default function ActiveNavigation({ items }: ActiveNavigationProps) {
             <a
               key={item.href}
               href={item.href}
-              onClick={item.href === "#home" ? handleHomeNavigation : undefined}
+              onClick={handleSectionNavigation}
               aria-current={isActive ? "location" : undefined}
-              className="relative inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full border border-transparent px-3.5 py-2 text-[14px] font-medium text-text-secondary transition-colors duration-200 hover:border-brand-border hover:bg-brand-soft hover:text-brand focus-visible:bg-brand-soft aria-[current=location]:border-brand-border aria-[current=location]:bg-brand-soft aria-[current=location]:font-semibold aria-[current=location]:text-brand min-[1440px]:min-h-[46px] min-[1440px]:px-4 min-[1440px]:text-[15px]"
+              className="relative inline-flex min-h-[44px] items-center whitespace-nowrap px-3.5 py-2 text-[14px] font-medium text-text-secondary transition-colors duration-200 after:absolute after:bottom-1 after:left-3.5 after:right-3.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-200 hover:text-brand focus-visible:text-brand aria-[current=location]:font-semibold aria-[current=location]:text-brand aria-[current=location]:after:scale-x-100 min-[1440px]:min-h-[46px] min-[1440px]:px-4 min-[1440px]:text-[15px]"
             >
               {item.label}
             </a>

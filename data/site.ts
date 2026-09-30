@@ -11,7 +11,6 @@ export type ServicePath = {
   steps: readonly string[];
   bullets: readonly string[];
   ctaLabel: string;
-  ctaHref: string;
 };
 
 export type ProjectShowcase = {
@@ -42,14 +41,22 @@ export type WorkflowStep = {
   description: string;
 };
 
+export type AssurancePoint = {
+  label: string;
+  description: string;
+};
+
 export const site = {
   brandName: "Flash Honner",
-  heroEyebrow: "THIẾT KẾ FIGMA • WEBSITE THEO YÊU CẦU",
-  heroNote: "Không cần biết hết công nghệ. Chỉ cần cho tụi mình biết bạn đang cần gì.",
+  heroEyebrow: "ĐỒ ÁN / DỰ ÁN MÔN HỌC",
+  heroHeadline: "Deadline đang gần nhưng giao diện vẫn chưa ổn?",
+  heroDescription: "FLASH HONNER hỗ trợ thiết kế Figma và phát triển website theo phạm vi dự án.",
+  heroNote: "Có ý tưởng hoặc Figma sẵn đều được. Gửi tụi mình xem trước.",
+  contextPoints: ["THIẾT KẾ FIGMA", "WEBSITE RESPONSIVE", "TRIỂN KHAI THỰC TẾ", "SOURCE THEO PHẠM VI"],
   painPoints: [
-    { id: "messy-ui", text: "Code gần xong nhưng giao diện vẫn còn rối." },
-    { id: "figma-gap", text: "Có Figma nhưng dựng web lên không giống thiết kế." },
-    { id: "deadline", text: "Deadline sát mà sản phẩm vẫn chưa đủ chỉn chu." },
+    { id: "messy-ui", text: "Code gần xong nhưng UI vẫn còn rối." },
+    { id: "figma-gap", text: "Có Figma nhưng code lên không giống thiết kế." },
+    { id: "deadline", text: "Deadline gần mà demo vẫn chưa đủ chỉn chu." },
     { id: "no-ui-specialist", text: "Không ai trong nhóm chuyên UI/UX." },
   ] satisfies readonly PainPoint[],
   servicePaths: [
@@ -62,11 +69,10 @@ export const site = {
       bullets: [
         "Bố cục rõ ràng",
         "Giao diện hiện đại",
-        "Thiết kế phù hợp với nội dung thật",
+        "Thiết kế bám nội dung thực tế",
         "Có thể tiếp tục triển khai thành website",
       ],
       ctaLabel: "Trao đổi thiết kế",
-      ctaHref: "#final-cta",
     },
     {
       id: "with-figma",
@@ -81,7 +87,6 @@ export const site = {
         "Có thể bàn giao source theo phạm vi",
       ],
       ctaLabel: "Gửi Figma",
-      ctaHref: "#final-cta",
     },
   ] satisfies readonly ServicePath[],
   projects: [
@@ -164,6 +169,11 @@ export const site = {
     { number: "03", title: "Phát triển", description: "Code và hoàn thiện giao diện." },
     { number: "04", title: "Bàn giao", description: "Kiểm tra và bàn giao phần đã thống nhất." },
   ] satisfies readonly WorkflowStep[],
+  assurancePoints: [
+    { label: "PHẠM VI", description: "Tụi mình xác nhận phần cần làm trước khi triển khai." },
+    { label: "TIẾN ĐỘ", description: "Thời gian được trao đổi dựa trên khối lượng thực tế." },
+    { label: "BÀN GIAO", description: "File và source được bàn giao theo đúng phạm vi đã thống nhất." },
+  ] satisfies readonly AssurancePoint[],
   footerDescription: "Thiết kế Figma & phát triển website theo yêu cầu.",
   copyright: "© 2026 Flash Honner",
 } as const;

@@ -8,22 +8,38 @@ function getHashSection(sectionIds: readonly string[]) {
   return sectionIds.includes(hash) ? hash : sectionIds[0] ?? "";
 }
 
-export function cleanHomeHash() {
+export function cleanSectionHash() {
   if (typeof window === "undefined" || !window.location.hash) {
     return;
   }
 
-  window.history.replaceState(null, "", window.location.pathname + window.location.search);
+  window.history.replaceState(window.history.state, "", window.location.pathname + window.location.search);
 }
 
-export function scrollHomeWithoutHash() {
+export function scrollToSectionWithoutHash(sectionId: string) {
   if (typeof window === "undefined") {
     return;
   }
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  document.getElementById("home")?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
-  cleanHomeHash();
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+  cleanSectionHash();
+}
+
+export function scrollHomeWithoutHash() {
+  scrollToSectionWithoutHash("home");
+}
+
+export function handleSectionNavigation(event: MouseEvent<HTMLAnchorElement>) {
+  const href = event.currentTarget.getAttribute("href") ?? "";
+  const sectionId = href.startsWith("#") ? href.slice(1) : "";
+
+  if (!sectionId || !document.getElementById(sectionId)) {
+    return;
+  }
+
+  event.preventDefault();
+  scrollToSectionWithoutHash(sectionId);
 }
 
 export function handleHomeNavigation(event: MouseEvent<HTMLAnchorElement>) {
@@ -41,7 +57,7 @@ export default function useActiveSection(sectionIds: readonly string[]) {
     let initialHashSettled = !initialHashSection || initialHashSection === "home";
 
     if (initialHashSection === "home") {
-      cleanHomeHash();
+      cleanSectionHash();
     }
 
     const sections = sectionIds
@@ -53,7 +69,11 @@ export default function useActiveSection(sectionIds: readonly string[]) {
     }
 
     const initialHashUpdateFrame = initialHashSection
-      ? window.requestAnimationFrame(() => setActiveSection(initialHashSection))
+      ? window.requestAnimationFrame(() => {
+          document.getElementById(initialHashSection)?.scrollIntoView({ behavior: "auto", block: "start" });
+          setActiveSection(initialHashSection);
+          cleanSectionHash();
+        })
       : null;
     const visibleSections = new Map<string, IntersectionObserverEntry>();
     const observer = new IntersectionObserver(
@@ -87,7 +107,7 @@ export default function useActiveSection(sectionIds: readonly string[]) {
           setActiveSection(sectionId);
 
           if (sectionId === "home" && window.scrollY <= 4) {
-            cleanHomeHash();
+            cleanSectionHash();
           }
         }
       },
@@ -104,7 +124,7 @@ export default function useActiveSection(sectionIds: readonly string[]) {
       setActiveSection(hashSection);
 
       if (hashSection === "home") {
-        cleanHomeHash();
+        cleanSectionHash();
       }
     };
 
