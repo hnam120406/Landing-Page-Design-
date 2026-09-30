@@ -48,14 +48,14 @@ export default function SocialFloating() {
   }
 
   return (
-    <aside className="floating-controls motion-enter fixed right-4 z-50 flex flex-col gap-3 md:right-5 md:gap-4 xl:right-7" aria-label="Liên kết nhanh">
+    <aside className="floating-controls motion-enter fixed right-4 z-50 flex flex-col md:right-5 xl:right-7" aria-label="Liên kết nhanh">
       <a
         href={ZALO_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Liên hệ Flash Honner qua Zalo"
         title="Liên hệ qua Zalo"
-        className={`flex size-16 items-center justify-center rounded-full border border-white/70 bg-[#0068FF] text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_14px_30px_rgba(0,104,255,0.3)] active:scale-[0.96] md:size-[72px] lg:size-20 ${isZaloAttention ? "zalo-attention" : ""}`}
+        className={`floating-control flex items-center justify-center rounded-full border border-white/70 bg-[#0068FF] text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_14px_30px_rgba(0,104,255,0.3)] active:scale-[0.96] ${isZaloAttention ? "zalo-attention" : ""}`}
       >
         <ZaloIcon />
       </a>
@@ -67,9 +67,9 @@ export default function SocialFloating() {
         aria-hidden={!isBackToTopVisible}
         tabIndex={isBackToTopVisible ? 0 : -1}
         disabled={!isBackToTopVisible}
-        className={`flex size-12 items-center justify-center rounded-full border border-[#FDBA74] bg-white text-[#EA580C] shadow-[0_10px_24px_rgba(154,52,18,0.16)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-[#F97316] hover:bg-[#FFF7ED] hover:shadow-[0_14px_30px_rgba(154,52,18,0.2)] md:size-[52px] xl:size-14 ${isBackToTopVisible ? "relative translate-y-0 opacity-100" : "pointer-events-none absolute right-0 translate-y-2 opacity-0"}`}
+        className={`floating-control flex items-center justify-center rounded-full border border-[#FDBA74] bg-white text-[#EA580C] shadow-[0_8px_24px_rgba(15,23,42,0.1)] transition duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-[#F97316] hover:bg-[#FFF7ED] hover:shadow-[0_10px_26px_rgba(15,23,42,0.14)] ${isBackToTopVisible ? "relative translate-y-0 opacity-100" : "pointer-events-none absolute right-0 translate-y-2 opacity-0"}`}
       >
-        <span aria-hidden="true" className="text-2xl leading-none md:text-[28px] xl:text-[30px]">↑</span>
+        <span aria-hidden="true" className="text-[26px] leading-none md:text-[28px] lg:text-[30px]">↑</span>
       </button>
     </aside>
   );

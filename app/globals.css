@@ -20,6 +20,8 @@
   --dark: #111827;
   --content-max-width: 1280px;
   --page-gutter: 16px;
+  --floating-control-size: 64px;
+  --floating-control-gap: 12px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -122,6 +124,14 @@ section[id] {
 
 .floating-controls {
   bottom: max(28px, calc(env(safe-area-inset-bottom) + 20px));
+  gap: var(--floating-control-gap);
+}
+
+.floating-control {
+  width: var(--floating-control-size);
+  height: var(--floating-control-size);
+  aspect-ratio: 1;
+  flex-shrink: 0;
 }
 
 .reveal-ready {
@@ -279,6 +289,8 @@ section[id] {
 @media (min-width: 768px) {
   :root {
     --page-gutter: 28px;
+    --floating-control-size: 72px;
+    --floating-control-gap: 16px;
   }
 
   .section-shell {
@@ -289,6 +301,7 @@ section[id] {
 @media (min-width: 1024px) {
   :root {
     --page-gutter: 32px;
+    --floating-control-size: 80px;
   }
 
   .section-shell {
