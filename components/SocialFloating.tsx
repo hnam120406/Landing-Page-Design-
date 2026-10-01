@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { site } from "@/data/site";
 import { scrollHomeWithoutHash } from "@/components/useActiveSection";
-
-const ZALO_URL = "https://zalo.me/0379052767";
 
 function ZaloIcon() {
   return <span aria-hidden="true" className="relative z-10 text-[16px] font-extrabold leading-none tracking-[-0.04em] md:text-[18px] lg:text-[20px]">Zalo</span>;
@@ -32,7 +31,7 @@ export default function SocialFloating() {
   return (
     <aside className="floating-controls motion-enter fixed right-4 z-50 flex flex-col md:right-5 xl:right-7" aria-label="Liên kết nhanh">
       <a
-        href={ZALO_URL}
+        href={site.zaloUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Liên hệ Flash Honner qua Zalo"

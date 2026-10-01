@@ -67,6 +67,7 @@ export type FaqItem = {
 
 export const site = {
   brandName: "Flash Honner",
+  zaloUrl: "https://zalo.me/0379052767",
   heroEyebrow: "Thiết kế Figma · Dựng website responsive",
   heroHeadline: "Có ý tưởng rồi, nhưng giao diện vẫn chưa ổn?",
   heroDescription:
@@ -100,7 +101,7 @@ export const site = {
         "Thiết kế desktop và mobile",
         "File Figma tổ chức gọn, dễ chỉnh sửa về sau",
       ],
-      ctaLabel: "Trao đổi về thiết kế",
+      ctaLabel: "Xem quy trình",
     },
     {
       id: "with-figma",
@@ -115,7 +116,7 @@ export const site = {
         "Hiển thị tốt trên nhiều kích thước màn hình",
         "Công nghệ được thống nhất theo phạm vi dự án",
       ],
-      ctaLabel: "Gửi Figma để xem thử",
+      ctaLabel: "Xem quy trình",
     },
     {
       id: "existing-code",
@@ -130,7 +131,7 @@ export const site = {
         "Đồng nhất các thành phần giao diện",
         "Bàn giao phần đã thống nhất",
       ],
-      ctaLabel: "Gửi link hoặc source",
+      ctaLabel: "Xem quy trình",
     },
   ] satisfies readonly ServicePath[],
   projects: [
@@ -267,7 +268,7 @@ export const site = {
     },
   ] satisfies readonly FaqItem[],
   footerDescription: "Thiết kế Figma và phát triển website theo yêu cầu.",
-  copyright: "© 2026 Flash Honner · Liên hệ: Zalo 0379052767",
+  copyright: "© 2026 Flash Honner. Product Design and Development.",
 } as const;
 
 export type Site = typeof site;

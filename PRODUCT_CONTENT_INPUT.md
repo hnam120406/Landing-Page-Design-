@@ -329,13 +329,13 @@ riêng và ảnh hỗ trợ không được cung cấp nên tiếp tục giữ `
 
 ## 9. CONTACT INFORMATION
 
-- Zalo: 037 905 2767
+- Contact: floating Zalo control
 - Lựa chọn owner: B — Thêm nút Zalo floating sau này
 - Trạng thái tích hợp: OWNER-CONFIRMED — ĐÃ TÍCH HỢP NÚT ZALO FLOATING
-- URL: `https://zalo.me/0379052767`
+- Contact entry point: the floating Zalo control in the production UI.
 - Nguồn / trạng thái: OWNER-CONFIRMED
 
-Số Zalo và URL trên đã được owner xác nhận để sử dụng cho nút liên hệ floating.
+Floating Zalo là điểm liên hệ duy nhất trên giao diện production.
 Không thêm Contact section riêng.
 
 Không dùng Google Search wrapper URL và không thêm Zalo SDK.

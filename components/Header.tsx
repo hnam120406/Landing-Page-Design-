@@ -2,7 +2,6 @@ import { site } from "@/data/site";
 import ActiveNavigation from "@/components/ActiveNavigation";
 import HomeLink from "@/components/HomeLink";
 import type { NavigationItem } from "@/components/MobileNavigation";
-import ZaloCtaButton from "@/components/ZaloCtaButton";
 import Image from "next/image";
 
 const navigation: NavigationItem[] = [
@@ -26,12 +25,7 @@ export default function Header() {
           <BrandMark />
         </HomeLink>
 
-        <div className="flex min-w-0 items-center gap-2 lg:gap-3">
-          <ActiveNavigation items={navigation} />
-          <ZaloCtaButton className="hidden min-h-11 items-center justify-center rounded-xl bg-brand px-4 text-[14px] font-semibold text-white shadow-[var(--shadow-soft)] transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-[var(--shadow-brand-hover)] focus-visible:bg-brand-hover lg:inline-flex">
-            Nhắn Zalo
-          </ZaloCtaButton>
-        </div>
+        <ActiveNavigation items={navigation} />
       </div>
     </header>
   );
