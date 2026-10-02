@@ -15,7 +15,7 @@ export default function ActiveNavigation({ items }: ActiveNavigationProps) {
 
   return (
     <>
-      <nav aria-label="Điều hướng chính" className="hidden items-center gap-1 lg:flex">
+      <nav aria-label="Điều hướng chính" className="hidden items-center gap-0.5 lg:flex">
         {items.map((item) => {
           const sectionId = item.href.slice(1);
           const isActive = activeSection === sectionId;
@@ -26,7 +26,7 @@ export default function ActiveNavigation({ items }: ActiveNavigationProps) {
               href={item.href}
               onClick={handleSectionNavigation}
               aria-current={isActive ? "location" : undefined}
-              className="relative inline-flex min-h-[44px] items-center whitespace-nowrap px-3.5 py-2 text-[14px] font-medium text-text-secondary transition-colors duration-200 after:absolute after:bottom-1 after:left-3.5 after:right-3.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-200 hover:text-brand focus-visible:text-brand aria-[current=location]:font-semibold aria-[current=location]:text-brand aria-[current=location]:after:scale-x-100 min-[1440px]:min-h-[46px] min-[1440px]:px-4 min-[1440px]:text-[15px]"
+              className="relative inline-flex min-h-[44px] items-center whitespace-nowrap px-3 py-2 text-[14px] font-medium text-text-secondary transition-colors duration-300 after:absolute after:bottom-1.5 after:left-3 after:size-1.5 after:origin-center after:scale-0 after:rounded-full after:bg-brand after:transition-transform after:duration-300 hover:text-brand focus-visible:text-brand aria-[current=location]:font-semibold aria-[current=location]:text-brand aria-[current=location]:after:scale-100 min-[1440px]:px-3.5"
             >
               {item.label}
             </a>

@@ -52,7 +52,7 @@ export default function MobileNavigation({ items, activeSection }: MobileNavigat
   }, [isOpen]);
 
   return (
-    <div className="lg:hidden">
+    <div className="relative z-10 shrink-0 lg:hidden">
       <button
         ref={menuButtonRef}
         type="button"
@@ -60,7 +60,7 @@ export default function MobileNavigation({ items, activeSection }: MobileNavigat
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex size-11 items-center justify-center rounded-xl border border-border text-text-primary transition-colors duration-200 hover:border-brand hover:text-brand focus-visible:bg-brand-soft"
+        className="relative z-10 flex size-11 items-center justify-center rounded-full border border-[rgba(41,37,36,0.16)] bg-[#FDFCF8] text-text-primary shadow-[0_2px_10px_rgba(41,37,36,0.06)] transition-colors duration-300 hover:border-brand hover:text-brand focus-visible:bg-brand-soft"
       >
         <span aria-hidden="true" className="relative flex size-5 flex-col justify-center gap-1.5">
           <span className={`block h-0.5 w-5 rounded-full bg-current transition duration-200 ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
@@ -73,9 +73,9 @@ export default function MobileNavigation({ items, activeSection }: MobileNavigat
         id="mobile-navigation"
         aria-label="Điều hướng di động"
         hidden={!isOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-8rem)] overflow-y-auto border-b border-border bg-white/95 p-3 shadow-[var(--shadow-soft)] backdrop-blur-md md:max-h-[calc(100dvh-9.5625rem)]"
+        className="absolute inset-x-0 top-[calc(100%+0.75rem)] max-h-[calc(100dvh-8rem)] overflow-y-auto rounded-[2rem] bg-transparent p-0 md:max-h-[calc(100dvh-9.5625rem)]"
       >
-        <div className="page-container grid gap-1 rounded-2xl border border-border bg-white p-2">
+        <div className="grid gap-1 rounded-[2rem] border border-[rgba(41,37,36,0.08)] bg-[#FDFCF8]/95 p-3 shadow-[var(--shadow-soft)] backdrop-blur-xl">
           {items.map((item, index) => (
             (() => {
               const sectionId = item.href.slice(1);
@@ -91,7 +91,7 @@ export default function MobileNavigation({ items, activeSection }: MobileNavigat
                     handleSectionNavigation(event);
                     setIsOpen(false);
                   }}
-                  className="flex min-h-11 items-center rounded-xl border border-transparent px-3 text-[15px] font-medium text-text-secondary transition-colors duration-200 hover:border-brand-border hover:bg-brand-soft hover:text-brand focus-visible:bg-brand-soft aria-[current=location]:border-brand-border aria-[current=location]:bg-brand-soft aria-[current=location]:font-semibold aria-[current=location]:text-brand"
+                  className="flex min-h-11 items-center rounded-full border border-transparent px-4 text-[15px] font-medium text-text-secondary transition-colors duration-300 hover:border-brand-border hover:bg-brand-soft hover:text-brand focus-visible:bg-brand-soft aria-[current=location]:border-brand-border aria-[current=location]:bg-brand-soft aria-[current=location]:font-semibold aria-[current=location]:text-brand"
                 >
                   {item.label}
                 </a>

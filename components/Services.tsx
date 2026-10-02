@@ -4,10 +4,10 @@ import SectionLink from "@/components/SectionLink";
 
 function ServiceFlow({ steps }: { steps: readonly string[] }) {
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-2 text-[13px] font-semibold text-text-primary">
+    <div className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-2 text-[13px] font-semibold text-text-primary">
       {steps.map((step, index) => (
         <div key={step} className="flex items-center gap-2">
-          <span className="rounded-full bg-background-soft px-3 py-1.5">{step}</span>
+          <span className="rounded-full bg-white/70 px-3 py-1.5">{step}</span>
           {index < steps.length - 1 ? <span aria-hidden="true" className="text-brand">→</span> : null}
         </div>
       ))}
@@ -17,24 +17,24 @@ function ServiceFlow({ steps }: { steps: readonly string[] }) {
 
 export default function Services() {
   return (
-    <section id="services" aria-labelledby="services-heading" className="section-shell bg-background-soft">
+    <section id="services" aria-labelledby="services-heading" className="section-shell soft-section bg-transparent">
       <div className="page-container">
         <Reveal className="max-w-2xl">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">DỊCH VỤ</p>
-          <h2 id="services-heading" className="mt-2 text-[28px] font-bold leading-[1.18] tracking-[-0.03em] text-text-primary md:text-[34px] lg:text-[40px]">Bạn đang ở bước nào?</h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-[1.65] text-text-secondary md:text-[16px]">Chọn hướng phù hợp với tình trạng hiện tại của bạn để bắt đầu trao đổi rõ ràng hơn.</p>
+          <p className="eyebrow text-brand">DỊCH VỤ</p>
+          <h2 id="services-heading" className="mt-3 max-w-[14ch] text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-text-primary">Bạn đang ở bước nào?</h2>
+          <p className="mt-5 max-w-xl text-[16px] leading-[1.65] text-text-secondary">Chọn hướng phù hợp với tình trạng hiện tại của bạn để bắt đầu trao đổi rõ ràng hơn.</p>
         </Reveal>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-2 lg:gap-6">
-          {site.servicePaths.map((path, index) => (
-            <Reveal key={path.id} delay={index * 80} className="flex h-full flex-col rounded-2xl border border-border bg-white p-5 shadow-[var(--shadow-soft)] sm:p-7">
-              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">{path.label}</p>
-              <h3 className="mt-3 max-w-[24ch] text-[21px] font-bold leading-[1.28] tracking-[-0.02em] text-text-primary md:text-[24px]">{path.title}</h3>
-              <p className="mt-3 max-w-xl text-[14px] leading-[1.65] text-text-secondary md:text-[15px]">{path.description}</p>
+        <div className="mt-12 grid gap-5 lg:grid-cols-[1.04fr_0.96fr] lg:gap-7">
+          {site.servicePaths.slice(0, 2).map((path, index) => (
+            <Reveal key={path.id} delay={index * 90} className={`editorial-panel flex h-full flex-col p-6 sm:p-8 lg:p-10 ${index === 0 ? "bg-[#E8EFE8]" : "bg-[#EFEDF4]"}`}>
+              <p className="eyebrow text-brand">{path.label}</p>
+              <h3 className="mt-4 max-w-[22ch] text-[clamp(1.45rem,2.5vw,2rem)] font-semibold leading-[1.12] tracking-[-0.035em] text-text-primary">{path.title}</h3>
+              <p className="mt-4 max-w-xl text-[15px] leading-[1.65] text-text-secondary">{path.description}</p>
 
               <ServiceFlow steps={path.steps} />
 
-              <ul className="mt-6 grid gap-3 border-t border-border pt-5 text-[14px] leading-[1.55] text-text-secondary sm:grid-cols-2 sm:gap-x-5">
+              <ul className="mt-7 grid gap-3 border-t border-[rgba(41,37,36,0.1)] pt-6 text-[14px] leading-[1.55] text-text-secondary sm:grid-cols-2 sm:gap-x-5">
                 {path.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-start gap-2">
                     <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-brand" />
@@ -43,13 +43,14 @@ export default function Services() {
                 ))}
               </ul>
 
-              <SectionLink href="#workflow" className="mt-7 inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border-strong bg-white px-5 text-[15px] font-semibold text-text-primary transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand-border hover:bg-brand-soft hover:text-brand active:translate-y-0 sm:w-fit">
+              <SectionLink href="#workflow" className="mt-8 inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[rgba(41,37,36,0.12)] bg-white/65 px-5 text-[15px] font-semibold text-text-primary transition duration-300 ease-out hover:-translate-y-0.5 hover:border-brand-border hover:bg-white hover:text-brand active:translate-y-0 sm:w-fit">
                 {path.ctaLabel}
-                <span aria-hidden="true" className="ml-2">→</span>
+                <span aria-hidden="true" className="ml-2">↗</span>
               </SectionLink>
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );

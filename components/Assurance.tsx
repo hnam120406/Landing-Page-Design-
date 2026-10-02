@@ -3,20 +3,22 @@ import Reveal from "@/components/Reveal";
 
 export default function Assurance() {
   return (
-    <section aria-labelledby="assurance-heading" className="section-shell bg-background-soft">
+    <section aria-labelledby="assurance-heading" className="section-shell soft-section bg-transparent">
       <div className="page-container">
-        <Reveal className="max-w-2xl">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">RÕ RÀNG NGAY TỪ ĐẦU</p>
-          <h2 id="assurance-heading" className="mt-2 text-[28px] font-bold leading-[1.18] tracking-[-0.03em] text-text-primary md:text-[34px] lg:text-[40px]">Trước khi bắt đầu</h2>
-        </Reveal>
+        <div className="rounded-[2.5rem] bg-[#E8EFE8] p-6 sm:p-9 lg:p-12">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow text-brand">RÕ RÀNG NGAY TỪ ĐẦU</p>
+            <h2 id="assurance-heading" className="mt-3 max-w-[14ch] text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-text-primary">Trước khi bắt đầu</h2>
+          </Reveal>
 
-        <div className="mt-8 grid border-y border-border md:grid-cols-2 md:gap-x-6 lg:grid-cols-4 lg:gap-x-0 lg:divide-x lg:divide-border">
-          {site.assurancePoints.map((point, index) => (
-            <Reveal key={point.label} delay={index * 60} className="border-b border-border py-5 last:border-b-0 md:px-5 md:py-6 lg:border-b-0 lg:px-6 lg:py-2 lg:first:pl-0 lg:last:pr-0">
-              <h3 className="text-[12px] font-bold tracking-[0.12em] text-brand">{point.label}</h3>
-              <p className="mt-2 max-w-sm text-[14px] leading-[1.65] text-text-secondary md:text-[15px]">{point.description}</p>
-            </Reveal>
-          ))}
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-[rgba(41,37,36,0.12)]">
+            {site.assurancePoints.map((point, index) => (
+              <Reveal key={point.label} delay={index * 60} className="lg:px-6 lg:first:pl-0 lg:last:pr-0">
+                <h3 className="eyebrow text-brand">{point.label}</h3>
+                <p className="mt-3 max-w-sm text-[14px] leading-[1.65] text-text-secondary md:text-[15px]">{point.description}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,12 +1,17 @@
+import Reveal from "@/components/Reveal";
+
 export default function ContactStrip() {
   return (
-    <section id="final-cta" aria-labelledby="final-cta-heading" className="border-y border-brand-border bg-brand-soft py-8 sm:py-9">
-      <div className="page-container">
-        <div className="max-w-[52rem]">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">BẮT ĐẦU TỪ ĐÂY</p>
-          <h2 id="final-cta-heading" className="mt-2 text-[24px] font-bold leading-[1.2] tracking-[-0.03em] text-text-primary md:text-[28px]">Có ý tưởng hoặc Figma sẵn?</h2>
-          <p className="mt-2 max-w-[52rem] text-[14px] leading-[1.6] text-text-secondary md:text-[15px]">Gửi ý tưởng, Figma hoặc link dự án đang làm dở. Khi cần liên hệ, bạn có thể dùng nút Zalo ở góc màn hình.</p>
-        </div>
+    <section id="final-cta" aria-labelledby="final-cta-heading" className="section-shell relative overflow-hidden bg-[#EFEDF4]">
+      <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-1/2 size-72 -translate-y-1/2 rounded-full bg-[#FFE4E1] blur-[100px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-1/4 size-80 rounded-full bg-[#E8EFE8] blur-[110px]" />
+      <div className="page-container relative">
+        <Reveal className="mx-auto max-w-[48rem] text-center">
+          <p className="eyebrow text-brand">BẮT ĐẦU TỪ ĐÂY</p>
+          <h2 id="final-cta-heading" className="mt-4 text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-text-primary">Có ý tưởng hoặc Figma sẵn?</h2>
+          <p className="mx-auto mt-5 max-w-[38rem] text-[16px] leading-[1.65] text-text-secondary">Gửi ý tưởng, Figma hoặc link dự án đang làm dở. Nút Zalo luôn ở góc màn hình để bạn liên hệ khi cần.</p>
+          <p aria-hidden="true" className="handwritten mt-7 text-[1.7rem] text-[#b96f68]">mình bắt đầu từ phần còn thiếu nhé</p>
+        </Reveal>
       </div>
     </section>
   );

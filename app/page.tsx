@@ -16,7 +16,13 @@ import WhyFlashHonner from "@/components/WhyFlashHonner";
 
 export default function Home() {
   return (
-    <>
+    <div className="site-shell">
+      <div aria-hidden="true" className="ambient-layer">
+        <span className="ambient-blob ambient-blob-peach" />
+        <span className="ambient-blob ambient-blob-lavender" />
+        <span className="ambient-blob ambient-blob-sage" />
+      </div>
+
       <Header />
 
       <main>
@@ -36,6 +42,6 @@ export default function Home() {
 
       <Footer />
       <SocialFloating />
-    </>
+    </div>
   );
 }

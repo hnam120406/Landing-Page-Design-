@@ -118,21 +118,6 @@ export const site = {
       ],
       ctaLabel: "Xem quy trình",
     },
-    {
-      id: "existing-code",
-      label: "CODE ĐÃ CÓ",
-      title: "Chỉ cần chỉnh giao diện cho gọn và đồng nhất.",
-      description:
-        "Tụi mình rà lại giao diện, sửa lỗi hiển thị và làm cho trang đồng nhất hơn. Phù hợp khi chức năng đã xong mà giao diện còn lộn xộn, lệch trên mobile hoặc thiếu nhất quán.",
-      steps: ["Rà soát", "Sửa giao diện", "Responsive", "Bàn giao"],
-      bullets: [
-        "Rà lại bố cục, màu, font và khoảng cách",
-        "Sửa các lỗi hiển thị trên mobile",
-        "Đồng nhất các thành phần giao diện",
-        "Bàn giao phần đã thống nhất",
-      ],
-      ctaLabel: "Xem quy trình",
-    },
   ] satisfies readonly ServicePath[],
   projects: [
     {

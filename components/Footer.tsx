@@ -18,13 +18,13 @@ const footerNavigation: FooterNavigationItem[] = [
 
 export default function Footer() {
   return (
-    <footer className="footer-shell border-t border-border">
-      <div className="page-container grid gap-6 py-10 sm:gap-8 sm:py-11 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-start md:gap-10 lg:py-12">
+    <footer className="footer-shell border-t border-[rgba(41,37,36,0.08)]">
+      <div className="page-container grid gap-8 py-12 sm:py-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-start md:gap-10 lg:py-16">
         <div className="max-w-md">
-          <HomeLink className="inline-flex min-h-11 items-center gap-3 rounded-2xl border border-border bg-white p-3" aria-label={`${site.brandName} - Trang chủ`}>
-            <Image src="/brand/logo.png" width={1254} height={1254} alt="" aria-hidden="true" className="h-auto w-[132px] shrink-0 object-contain lg:w-[160px] min-[1440px]:w-[180px]" />
+          <HomeLink className="inline-flex min-h-11 items-center gap-3" aria-label={`${site.brandName} - Trang chủ`}>
+            <Image src="/brand/logo.png" width={1254} height={1254} alt="" aria-hidden="true" className="h-auto w-[136px] shrink-0 object-contain lg:w-[154px]" />
           </HomeLink>
-          <p className="mt-3 max-w-[36rem] text-[14px] leading-[1.6] text-text-secondary lg:text-[15px]">{site.footerDescription}</p>
+          <p className="mt-4 max-w-[36rem] text-[14px] leading-[1.6] text-text-secondary lg:text-[15px]">{site.footerDescription}</p>
         </div>
 
         <nav aria-label="Điều hướng cuối trang" className="md:w-full md:max-w-md md:justify-self-end">
